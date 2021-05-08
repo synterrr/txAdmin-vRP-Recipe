@@ -23,14 +23,6 @@ tasks:
   - action: replace_string
     mode: all_vars
     file: ./resources/GHMattiMySQL/settings.xml
-  
-  # Move and set database connections in vRP
-  - action: move_path
-    src: ./tmp/vrp_recipe/base.lua
-    dest: ./resources/[vRP]/vrp/cfg/
-  - action: replace_string
-    mode: all_vars
-    file: ./resources/[vRP]/vrp/cfg/base.lua
     
   # Download default CFX resources
   - action: download_github
@@ -44,6 +36,14 @@ tasks:
     src: https://github.com/ImagicTheCat/vRP
     ref: 234105fdddfd5387f8324e8dc7a2c6b205bb1bbe
     dest: ./resources/[vRP]
+
+  # Move and set database connections in vRP
+  - action: move_path
+    src: ./tmp/vrp_recipe/base.lua
+    dest: ./resources/[vRP]/vrp/cfg/
+  - action: replace_string
+    mode: all_vars
+    file: ./resources/[vRP]/vrp/cfg/base.lua
     
   # Download vRP database connectors
   - action: download_github
