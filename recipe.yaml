@@ -39,3 +39,5 @@ tasks:
 
   - action: remove_path
     path: ./tmp
+
+  - action: connect_database
