@@ -3,8 +3,8 @@
   <setting key="MySQL:UseConvars">false</setting>
   <setting key="MySQL:Server">localhost</setting>
   <setting key="MySQL:Port">3306</setting>
-  <setting key="MySQL:Database">fivem</setting>
-  <setting key="MySQL:Username">ghmatti</setting>
-  <setting key="MySQL:Password">password</setting>
+  <setting key="MySQL:Database">vrp</setting>
+  <setting key="MySQL:Username">root</setting>
+  <setting key="MySQL:Password"></setting>
   <setting key="MySQL:Debug">true</setting>
 </configuration>
