@@ -41,3 +41,6 @@ tasks:
     path: ./tmp
 
   - action: connect_database
+  - action: replate_string
+    mode: all_vars
+    file: ./resources/GHMattiMySQL/settings.xml
