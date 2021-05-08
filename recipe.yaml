@@ -14,6 +14,10 @@ tasks:
     src: ./tmp/vrp_recipe/server.cfg
     dest: ./server.cfg
 
+  - action: move_path
+    src: ./tmp/vrp_recipe/GHMattiMySQL
+    dest: ./resources/GHMattiMySQL
+    
   # Download default CFX resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
@@ -32,17 +36,6 @@ tasks:
     src: https://github.com/ImagicTheCat/vRP-db-drivers
     ref: 7a7f25c6db366696faf28aa77de7b4c385db96b2
     dest: ./resources/[Database]
-
-  # Download GHMattiMySQL
-  - action: download_file
-    url: https://github.com/GHMatti/FiveM-MySQL/releases/download/0.6.1/GHMattiMySQL.zip
-    path: ./tmp/GHMattiMySQL.zip
-  - action: unzip
-    src: ./tmp/GHMattiMySQL.zip
-    dest: ./tmp
-  - action: move_path
-    src: ./tmp/resources/GHMattiMySQL
-    dest: ./resources/GHMattiMySQL
 
   - action: remove_path
     path: ./tmp
