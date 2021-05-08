@@ -1,0 +1,48 @@
+$engine: 3
+name: vRP
+version: 1.0.0
+author: SynTer & Plok
+description: Fully pre-configured vRP server
+tasks:
+  # Download and prepare server.cfg
+  - action: download_github
+    src: https://github.com/synterrr/txAdmin-vRP-Recipe
+    ref: main
+    dest: ./tmp/vrp_recipe
+
+  - action: move_path
+    src: ./tmp/vrp_recipe/server.cfg
+    dest: ./server.cfg
+
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: 0210252be7c17745fa30220e12c19e0d2f19af02
+    subpath: resources
+    dest: ./resources/[default]
+
+  # Download vRP
+  - action: download_github
+    src: https://github.com/ImagicTheCat/vRP
+    ref: 234105fdddfd5387f8324e8dc7a2c6b205bb1bbe
+    dest: ./resources/[vRP]
+
+  # Download vRP database connectors
+  - action: download_github
+    src: https://github.com/ImagicTheCat/vRP-db-drivers
+    ref: 7a7f25c6db366696faf28aa77de7b4c385db96b2
+    dest: ./resources/[Database]
+
+  # Download GHMattiMySQL
+  - action: download_file
+    url: https://github.com/GHMatti/FiveM-MySQL/releases/download/0.6.1/GHMattiMySQL.zip
+    path: ./tmp/GHMattiMySQL.zip
+  - action: unzip
+    src: ./tmp/GHMattiMySQL.zip
+    dest: ./tmp
+  - action: move_path
+    src: ./tmp/resources/GHMattiMySQL
+    dest: ./resources/GHMattiMySQL
+
+  - action: remove_path
+    path: ./tmp
