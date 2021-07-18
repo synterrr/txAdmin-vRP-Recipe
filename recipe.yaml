@@ -33,8 +33,8 @@ tasks:
 
   # Download vRP
   - action: download_github
-    src: https://github.com/ImagicTheCat/vRP
-    ref: 234105fdddfd5387f8324e8dc7a2c6b205bb1bbe
+    src: https://github.com/ImagicTheCat/vRP/archive/refs/tags/1.0.zip
+    ref: 8eaf715e644c15d831d70bb3deb95b2eea70bcc8
     dest: ./resources/[vRP]
 
   # Move and set database connections in vRP
